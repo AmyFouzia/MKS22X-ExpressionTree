@@ -11,6 +11,7 @@ public class ExpressionTree{
 
     else{
       return ("(" + getLeft().toStringPostfix() + getOp() + getRight().toStringPostfix() + ")");
+      //WRONG
     }
   }
 
