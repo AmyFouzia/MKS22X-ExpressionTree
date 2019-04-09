@@ -10,7 +10,7 @@ public class ExpressionTree{
     }
 
     else{
-      return ("(" + getLeft().toStringPostfix() + getOp() + getRight().toStringPostfix() + ")");
+      return ("(" + getLeft().toString() + " " + getOp() + " " + getRight().toString() + ")");
       //WRONG
     }
   }
@@ -36,7 +36,7 @@ public class ExpressionTree{
     }
 
     else{
-      return(getOp() + " " + getRight().toStringPostfix() + " " + getLeft().toStringPostfix());
+      return(getOp() + " " + getLeft().toStringPrefix() + " " + getRight().toStringPrefix());
     }
   }
 
@@ -44,17 +44,13 @@ public class ExpressionTree{
   /*return the value of the specified expression tree*/
 
   public double evaluate(){
-    int track[];
-
     if(isValue()){
       return getValue();
     }
 
     else{
-      apply(getOp(), getLeft().evaluate(), getRight().evaluate());
+      return apply(getOp(), getLeft().evaluate(), getRight().evaluate());
     }
-
-    return 0.0;
   }
 
 
